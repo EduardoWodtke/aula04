@@ -13,16 +13,17 @@ const tamanho = ref('')
 
 <template>
   <div>
-    <label for="nome">Nome: </label>
-    <input type="text" size="20" v-model="nome" />
-    <label for="senha">Senha</label>
-    <input type="password" size="20" minlength="3" v-model="senha" />
+    <label for="nome" style="margin-left: 20px;">Nome: </label>
+    <input type="text" placeholder="informe a Nome" size="20" v-model.lazy="nome" />
+    <label for="senha" style="margin-left: 20px;">Senha</label>
+    <input type="password" placeholder="informe a senha" size="20" minlength="3" v-model="senha" />
     <!--minlength é minimo de letra -->
-    <label for="idade">Idade</label>
+    <label for="idade" style="margin-left: 20px;">Idade</label>
     <input type="number" v-model="idade" />
     <!-- :value="texto" @input="(e) => (texto=e.target.value)" -->
   </div>
   <div>
+  <br>
     <textarea v-model="bio" cols="100" rows="3" />
   </div>
   <label for="aceitaTermos">possui carro(s)?</label>
@@ -43,12 +44,12 @@ const tamanho = ref('')
 <hr>
 
 <label for="tamanho">tamanho</label>
-  <select v-model="sexo">
+  <select v-model="tamanho">
     <option value="p">p</option>
     <option value="m">m</option>
     <option value="gg">gg</option>
   </select>
-
+  
   <div>
     <p>nome: {{ nome }}</p>
     <hr />
